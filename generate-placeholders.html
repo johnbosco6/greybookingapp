@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+</head>
+<body>
+    <canvas id="canvas" width="1200" height="800"></canvas>
+    <script>
+        const destinations = [
+            { name: 'Mazury', color1: '#1a5f7a', color2: '#57c5b6' },
+            { name: 'Bieszczady', color1: '#2d5016', color2: '#86a873' },
+            { name: 'Sopot', color1: '#0077be', color2: '#ffd700' },
+            { name: 'Lublin', color1: '#8b4513', color2: '#daa520' }
+        ];
+
+        const experiences = [
+            { name: 'Krakow Tour', color1: '#8b0000', color2: '#ffd700' },
+            { name: 'Kayaking', color1: '#006994', color2: '#4cb5f5' },
+            { name: 'Gingerbread', color1: '#8b4513', color2: '#d2691e' },
+            { name: 'Salt Mine', color1: '#4a4a4a', color2: '#a9a9a9' },
+            { name: 'Boat Tour', color1: '#1e3a8a', color2: '#60a5fa' },
+            { name: 'Giewont', color1: '#374151', color2: '#9ca3af' },
+            { name: 'Pottery', color1: '#92400e', color2: '#d97706' },
+            { name: 'Warsaw Night', color1: '#1f2937', color2: '#edff23' }
+        ];
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function createGradient(name, color1, color2) {
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 800);
+            gradient.addColorStop(0, color1);
+            gradient.addColorStop(1, color2);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 800);
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.font = 'bold 72px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(name, 600, 400);
+
+            const dataURL = canvas.toDataURL('image/jpeg', 0.9);
+            const link = document.createElement('a');
+            link.download = name.toLowerCase().replace(/ /g, '-') + '.jpg';
+            link.href = dataURL;
+            link.click();
+        }
+
+        // Generate all images
+        [...destinations, ...experiences].forEach((item, index) => {
+            setTimeout(() => createGradient(item.name, item.color1, item.color2), index * 100);
+        });
+    </script>
+</body>
+</html>
