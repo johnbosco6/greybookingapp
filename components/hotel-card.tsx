@@ -27,7 +27,13 @@ export function HotelCard({ hotel }: HotelCardProps) {
     <Link href={`/hotels/${hotel.id}`}>
       <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card border-2 border-[#EDFF23] h-full relative group">
         <div className="relative h-48 w-full">
-          <Image src={hotel.image || "/placeholder.svg"} alt={hotel.name} fill className="object-cover" />
+          <Image
+            src={hotel.image || "/placeholder.svg"}
+            alt={hotel.name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover"
+          />
           <button
             onClick={handleWishlistClick}
             className="absolute top-3 right-3 w-10 h-10 bg-dark/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-dark transition-colors z-10"

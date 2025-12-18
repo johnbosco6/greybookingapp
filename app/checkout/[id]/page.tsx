@@ -16,6 +16,7 @@ import { CreditCard, Wallet, Building2, CheckCircle2 } from "lucide-react"
 import { notFound } from "next/navigation"
 import { format } from "date-fns"
 import { pl } from "date-fns/locale"
+import Image from "next/image"
 
 export default function CheckoutPage({ params }: { params: { id: string } }) {
   const router = useRouter()
@@ -62,8 +63,14 @@ export default function CheckoutPage({ params }: { params: { id: string } }) {
     // Simulate payment processing
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
-    alert("Płatność została pomyślnie przetworzona! Potwierdzenie zostało wysłane na Twój email.")
-    router.push("/")
+    const params = new URLSearchParams()
+    if (hotel?.name) params.append("hotel", hotel.name)
+    if (checkInParam) params.append("checkIn", checkInParam)
+    if (checkOutParam) params.append("checkOut", checkOutParam)
+    params.append("amount", total.toString())
+    if (emailParam) params.append("email", emailParam)
+
+    router.push(`/booking/success?${params.toString()}`)
   }
 
   return (
@@ -344,11 +351,13 @@ export default function CheckoutPage({ params }: { params: { id: string } }) {
                 <CardTitle>Podsumowanie zamówienia</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="aspect-video rounded-lg overflow-hidden">
-                  <img
+                <div className="aspect-video rounded-lg overflow-hidden relative">
+                  <Image
                     src={hotel.image || "/placeholder.svg"}
                     alt={hotel.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover"
                   />
                 </div>
 

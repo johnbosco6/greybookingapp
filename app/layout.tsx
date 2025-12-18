@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Grey Bookings - Rezerwuj hotele w Lublinie",
-  description: "Znajdź i zarezerwuj najlepsze hotele w Lublinie. Porównuj ceny i czytaj opinie.",
-    generator: 'v0.app'
+  title: "Grey Bookings - Najlepsze hotele w Polsce",
+  description: "Znajdź i zarezerwuj idealny hotel. Odkryj najpiękniejsze miejsca w Polsce z Grey Bookings.",
+  generator: 'v0.app'
 }
 
 export default function RootLayout({

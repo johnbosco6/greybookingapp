@@ -1,114 +1,76 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Card, CardContent } from "@/components/ui/card"
-import { ShieldCheckIcon, HeartIcon, TrophyIcon, UsersIcon } from "lucide-react"
+import Image from "next/image"
+import { Users, Target, Heart } from "lucide-react"
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">O Grey Bookings</h1>
-            <p className="text-lg text-muted-foreground">Twój zaufany partner w rezerwacji hoteli w całej Polsce</p>
+      <main className="flex-1">
+        {/* Hero */}
+        <div className="relative h-[400px] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-dark/70 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-10" />
+          <Image
+            src="/placeholder.svg?height=800&width=1200&text=About+Us"
+            alt="About Us"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="container mx-auto px-4 relative z-20 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">O nas</h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">Tworzymy przyszłość podróżowania, łącząc technologię z pasją do odkrywania Polski.</p>
           </div>
-
-          <Card className="bg-card border-primary/30 mb-8">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Nasza historia</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Grey Bookings powstało z pasji do podróżowania i chęci ułatwienia Polakom znajdowania idealnych miejsc
-                noclegowych. Od 2024 roku pomagamy tysiącom klientów w rezerwacji hoteli w najpiękniejszych zakątkach
-                Polski.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Nasza platforma łączy najlepsze hotele z podróżnikami, oferując konkurencyjne ceny, przejrzysty system
-                rezerwacji i wsparcie na każdym etapie podróży.
-              </p>
-            </CardContent>
-          </Card>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Card className="bg-card border-primary/30">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <ShieldCheckIcon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Bezpieczeństwo</h3>
-                <p className="text-muted-foreground">
-                  Gwarantujemy bezpieczne płatności i ochronę Twoich danych osobowych zgodnie z najwyższymi standardami.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/30">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <HeartIcon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Pasja</h3>
-                <p className="text-muted-foreground">
-                  Kochamy to, co robimy. Każda rezerwacja to dla nas możliwość stworzenia niezapomnianego doświadczenia.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/30">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <TrophyIcon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Jakość</h3>
-                <p className="text-muted-foreground">
-                  Współpracujemy tylko z najlepszymi hotelami, które spełniają nasze wysokie standardy jakości.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/30">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <UsersIcon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Wsparcie</h3>
-                <p className="text-muted-foreground">
-                  Nasz zespół jest dostępny 24/7, aby pomóc Ci w każdej sytuacji i odpowiedzieć na wszystkie pytania.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="bg-card border-primary/30">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Dlaczego Grey Bookings?</h2>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
-                  <span>Ponad 50 hoteli w całej Polsce</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
-                  <span>Najlepsze ceny gwarantowane</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
-                  <span>Darmowa anulacja rezerwacji</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
-                  <span>Natychmiastowe potwierdzenie</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
-                  <span>Wsparcie klienta 24/7</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
         </div>
-      </div>
+
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto space-y-16">
+
+            {/* Story */}
+            <section className="text-center">
+              <h2 className="text-3xl font-bold mb-6">Nasza Historia</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Grey Bookings powstało z miłości do podróży i chęci pokazania, jak piękna jest Polska.
+                Zaczynaliśmy jako mały zespół entuzjastów, a dziś jesteśmy jedną z wiodących platform rezerwacyjnych w kraju.
+                Wierzymy, że każdy zasługuje na wyjątkowy wypoczynek, dlatego starannie selekcjonujemy ofertę hoteli i apartamentów.
+              </p>
+            </section>
+
+            {/* Values */}
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-card p-6 rounded-xl border border-border text-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Ludzie są najważniejsi</h3>
+                <p className="text-muted-foreground">Zarówno nasi klienci, jak i partnerzy hotelowi są w centrum wszystkiego, co robimy.</p>
+              </div>
+
+              <div className="bg-card p-6 rounded-xl border border-border text-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Innowacja</h3>
+                <p className="text-muted-foreground">Ciągle szukamy nowych rozwiązań, aby proces rezerwacji był prostszy i szybszy.</p>
+              </div>
+
+              <div className="bg-card p-6 rounded-xl border border-border text-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Pasja</h3>
+                <p className="text-muted-foreground">Podróże to nasza pasja, którą chcemy dzielić się z każdym użytkownikiem naszej platformy.</p>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </main>
 
       <Footer />
     </div>

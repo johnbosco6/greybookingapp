@@ -29,7 +29,7 @@ export function ExperienceCard({ experience, index = 0 }: ExperienceCardProps) {
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute top-3 right-3 bg-dark/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <span className="text-xs font-medium text-primary">{experience.category}</span>
+                            <span className="text-xs font-medium text-white">{experience.category}</span>
                         </div>
                     </div>
 

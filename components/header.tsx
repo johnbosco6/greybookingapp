@@ -12,7 +12,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-primary/20 backdrop-blur-xl bg-dark/70 supports-[backdrop-filter]:bg-dark/50">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <div className="text-2xl font-bold text-primary">Grey Bookings</div>
+          <div className="text-2xl font-bold text-white">Grey Bookings</div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">

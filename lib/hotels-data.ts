@@ -30,7 +30,7 @@ export const hotels: Hotel[] = [
     reviewCount: 892,
     price: 650,
     stars: 5,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/hotels/hotel-1.jpg",
     images: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -51,7 +51,7 @@ export const hotels: Hotel[] = [
     reviewCount: 1243,
     price: 420,
     stars: 4,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/hotels/hotel-2.jpg",
     images: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -72,7 +72,7 @@ export const hotels: Hotel[] = [
     reviewCount: 678,
     price: 380,
     stars: 3,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/hotels/hotel-3.jpg",
     images: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -92,7 +92,7 @@ export const hotels: Hotel[] = [
     reviewCount: 534,
     price: 280,
     stars: 3,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/hotels/hotel-4.jpg",
     images: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -114,7 +114,7 @@ export const hotels: Hotel[] = [
     reviewCount: 1456,
     price: 720,
     stars: 5,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/hotels/hotel-5.jpg",
     images: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
